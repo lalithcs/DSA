@@ -6,8 +6,6 @@ void bfs(int v) {
     visited[v] = 1;
     while (f <= r) {
         v = q[f++];
-        printf("%d ", v);
-
         for (i = 1; i <= n; i++) {
             if (a[v][i] && !visited[i]) {
                 q[++r] = i;
