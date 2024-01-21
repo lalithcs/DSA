@@ -39,6 +39,16 @@ void display(){
         printf("%d ",temp->a);
         temp=temp->next;
     }
+    temp=start;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    printf("\n");
+    printf("The Elements in the Reverse order:");
+    while(temp!=NULL){
+        printf("%d ",temp->a);
+        temp=temp->prev;
+    }
     printf("\n");
 }
 void insert_at_beg(int a){
@@ -83,7 +93,7 @@ void delete_at_beg(){
     temp->prev=NULL;
     free(start);
     start=temp;
-    printf("Deleted Succesfully!!");
+    printf("Deleted Succesfully!!\n");
 }
 void delete_at_end(){
     temp=start;
@@ -92,9 +102,9 @@ void delete_at_end(){
     }
     temp->prev->next=NULL;
     free(temp);
-    printf("Deleted Succesfully!!");
+    printf("Deleted Succesfully!!\n");
 }
-void delete_at_pos(){
+void delete_at_pos(int h){
     temp=start;
     while(temp->a!=h){
         if(temp==NULL){
